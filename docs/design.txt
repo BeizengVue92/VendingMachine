@@ -1,0 +1,141 @@
+Problem Statement: 
+  Create a vending machine application that the user can vend an item
+  from a list by inputing money in. The app will prompt the user for 
+  money. If the user inputs any money lower than zero, The app will tell 
+  user to try again. The user can choose what item they want to vend 
+  with a code or to quit. The item will vend if the user has enough 
+  money and it will calculate the change from the cost of the item. 
+  The app will thank the user and display the change the user has left 
+  over.
+
+Noun: 
+  user
+  money
+  listed items
+  item
+  cost
+  code
+  change
+
+Verb:
+  prompts
+  display
+  vend
+  calculate
+  Thank
+
+Defining Diagram
+
+  INPUTS:
+    userMoney
+    itemCode
+
+  PROCESSING:
+    display listedItems
+    calculate userChange
+    display vendItem
+    display userChange
+
+  OUTPUTS:
+    listedItems
+    vendItem
+    userChange
+
+Solution Algorithm:
+  vendingMachine
+    Initialize userMoney
+    Initialize listedItems as array
+    Initialize Loop to true
+    Initialize vendItem
+    Initialize userChange
+    Initialize itemCode
+
+    WHILE(Loop) THEN
+      Prompt for userMoney
+      IF userMoney < 0 THEN
+        Tell user to input money greater than zero
+      ELSEIF moneyInput > 0 THEN
+        Prompt for itemCode
+        SWITCH(itemCode)
+          case "itemCode": 
+            IF(listedItem cost < moneyInput) THEN
+              calculate userChange
+              display vendItem
+              display userChange
+              Loop = false;
+            ELSEIF(listedItem cost > userMoney) THEN
+              tell user that there is not enough money
+            ELSE
+              Loop = false
+            ENDIF
+          break
+          case "quit":
+            calculate userChange
+            display userChange
+            Loop = false;
+          break
+          default:
+            Tell user Item does not match
+        ENDSWITCH
+      ELSE
+        Tell user to enter a number
+      ENDIF
+    ENDWHILE
+  END
+
+Test:
+
+TEST 1:
+Input:
+10
+A1
+
+Expected Results:
+Vending: MilkyWay
+Change: $9.25
+
+Actual Results:
+Vending: MilkyWay
+Change: $9.25
+
+TEST 2:
+Input:
+10000
+B2
+
+Expected Results:
+Vending: Cheetos
+Change: $9998.00
+
+Actual Results:
+Vending: Cheetos
+Change: $9998.00
+
+TEST 3:
+Input:
+1.75
+C3
+
+Expected Results:
+Vending: Starbursts
+Change: $0.00
+
+Actual Results:
+Vending: Starbursts
+Change: $0.00
+
+TEST 4
+Input: 
+2
+quit
+
+Expected Results:
+Change: $2.00
+
+Actual Results:
+Change: $2.00
+
+
+
+
+    
